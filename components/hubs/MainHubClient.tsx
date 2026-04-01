@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import type { Role, Profile, DashboardStats } from '@/types';
+import type { Role, DashboardStats, ProfileSummary } from '@/types';
 import { StatCard } from '@/components/ui/StatCard';
 import { RolesTable } from '@/components/hubs/RolesTable';
 import { RoleModal } from '@/components/hubs/RoleModal';
@@ -11,7 +11,7 @@ type StatusFilter = 'all' | 'open' | 'inquiry' | 'replacement' | 'internal' | 'p
 
 interface MainHubClientProps {
   roles: Role[];
-  profiles: Profile[];
+  profiles: ProfileSummary[];
   stats: DashboardStats;
 }
 

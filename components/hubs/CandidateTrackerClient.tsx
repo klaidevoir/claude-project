@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import type { Candidate, Role, Profile, CandidateStage } from '@/types';
+import type { Candidate, Role, CandidateStage, ProfileSummary } from '@/types';
 import { stageLabel, stageColor, formatDate, cn } from '@/lib/utils';
 import { CandidateModal } from '@/components/hubs/CandidateModal';
 import { CandidateProfileModal } from '@/components/hubs/CandidateProfileModal';
@@ -11,7 +11,7 @@ const STAGES: CandidateStage[] = ['applied', 'screening', 'interview_1', 'interv
 interface Props {
   candidates: Candidate[];
   roles: Partial<Role>[];
-  profiles: Partial<Profile>[];
+  profiles: ProfileSummary[];
 }
 
 export function CandidateTrackerClient({ candidates, roles, profiles }: Props) {
@@ -279,13 +279,13 @@ export function CandidateTrackerClient({ candidates, roles, profiles }: Props) {
       )}
 
       {showAddModal && (
-        <CandidateModal open={showAddModal} onClose={() => setShowAddModal(false)} roles={roles as Role[]} profiles={profiles as Profile[]} />
+        <CandidateModal open={showAddModal} onClose={() => setShowAddModal(false)} roles={roles as Role[]} profiles={profiles} />
       )}
       {editCandidate && (
-        <CandidateModal open={!!editCandidate} onClose={() => setEditCandidate(null)} candidate={editCandidate} roles={roles as Role[]} profiles={profiles as Profile[]} />
+        <CandidateModal open={!!editCandidate} onClose={() => setEditCandidate(null)} candidate={editCandidate} roles={roles as Role[]} profiles={profiles} />
       )}
       {viewCandidate && (
-        <CandidateProfileModal open={!!viewCandidate} onClose={() => setViewCandidate(null)} candidate={viewCandidate} profiles={profiles as Profile[]} />
+        <CandidateProfileModal open={!!viewCandidate} onClose={() => setViewCandidate(null)} candidate={viewCandidate} profiles={profiles} />
       )}
     </div>
   );

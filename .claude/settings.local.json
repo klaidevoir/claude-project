@@ -8,7 +8,8 @@
       "Bash(where npm:*)",
       "Read(//c//**)",
       "Read(//c/Users/klaid/AppData/Roaming/npm/**)",
-      "Bash(find /c -name npm -type f)"
+      "Bash(find /c -name npm -type f)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

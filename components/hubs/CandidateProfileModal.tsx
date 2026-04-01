@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { Modal } from '@/components/ui/Modal';
-import type { Candidate, Profile, CandidateStage } from '@/types';
+import type { Candidate, CandidateStage, ProfileSummary } from '@/types';
 import { stageLabel, stageColor, formatDate, formatCurrency, cn } from '@/lib/utils';
 import toast from 'react-hot-toast';
 
@@ -12,7 +12,7 @@ interface Props {
   open: boolean;
   onClose: () => void;
   candidate: Candidate;
-  profiles: Partial<Profile>[];
+  profiles: ProfileSummary[];
 }
 
 const STAGES: CandidateStage[] = ['applied', 'screening', 'interview_1', 'interview_2', 'interview_3', 'offer', 'hired', 'rejected', 'withdrawn'];

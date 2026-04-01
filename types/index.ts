@@ -164,3 +164,6 @@ export interface DashboardStats {
   roles_in_interviews: number;
   roles_awaiting_feedback: number;
 }
+
+// Subset of Profile used in dropdowns and selects — matches what Supabase partial queries return
+export type ProfileSummary = Pick<Profile, 'id' | 'full_name' | 'role'>;

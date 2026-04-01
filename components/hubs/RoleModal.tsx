@@ -4,14 +4,14 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { Modal } from '@/components/ui/Modal';
-import type { Role, Profile } from '@/types';
+import type { Role, ProfileSummary } from '@/types';
 import toast from 'react-hot-toast';
 
 interface RoleModalProps {
   open: boolean;
   onClose: () => void;
   role?: Role | null;
-  profiles: Profile[];
+  profiles: ProfileSummary[];
 }
 
 const TARGET_REGIONS = ['Philippines', 'Latin America', 'Nigeria', 'Sri Lanka', 'South Africa'];

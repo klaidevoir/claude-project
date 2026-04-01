@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { Modal } from '@/components/ui/Modal';
-import type { Candidate, Role, Profile } from '@/types';
+import type { Candidate, Role, ProfileSummary } from '@/types';
 import toast from 'react-hot-toast';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   onClose: () => void;
   candidate?: Candidate | null;
   roles: Role[];
-  profiles: Profile[];
+  profiles: ProfileSummary[];
 }
 
 const STAGES = ['applied', 'screening', 'interview_1', 'interview_2', 'interview_3', 'offer', 'hired', 'rejected', 'withdrawn'];
