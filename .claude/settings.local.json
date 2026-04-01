@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"C:/Claude Code/claude-code-project/app/\\(dashboard\\)/\")",
+      "Skill(claude-api)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(where npm:*)",
+      "Read(//c//**)",
+      "Read(//c/Users/klaid/AppData/Roaming/npm/**)",
+      "Bash(find /c -name npm -type f)"
+    ]
+  }
+}
