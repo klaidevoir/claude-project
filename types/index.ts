@@ -124,6 +124,9 @@ export interface ActivityLog {
   new_value?: string;
   created_at: string;
   user?: Profile;
+  // Supabase joined fields
+  role?: { id?: string; title: string; client_name?: string; status?: string };
+  candidate?: { name: string };
 }
 
 export interface JobPosting {

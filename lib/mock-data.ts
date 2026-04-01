@@ -366,7 +366,7 @@ export const mockActivityLogs: ActivityLog[] = [
     action: 'Role created via Slack /role command',
     created_at: '2026-03-10T08:00:00Z',
     user: mockProfiles[2],
-    role: { id: 'role-1', title: 'Senior React Developer', client_name: 'TechCorp USA', status: 'open' } as any,
+    role: { id: 'role-1', title: 'Senior React Developer', client_name: 'TechCorp USA', status: 'open' },
   },
   {
     id: 'log-2',
@@ -377,8 +377,8 @@ export const mockActivityLogs: ActivityLog[] = [
     new_value: 'Miguel Santos',
     created_at: '2026-03-11T10:00:00Z',
     user: mockProfiles[2],
-    candidate: { name: 'Miguel Santos' } as any,
-    role: { id: 'role-1', title: 'Senior React Developer', client_name: 'TechCorp USA', status: 'open' } as any,
+    candidate: { name: 'Miguel Santos' },
+    role: { id: 'role-1', title: 'Senior React Developer', client_name: 'TechCorp USA', status: 'open' },
   },
   {
     id: 'log-3',
@@ -391,8 +391,8 @@ export const mockActivityLogs: ActivityLog[] = [
     new_value: 'screening',
     created_at: '2026-03-13T11:00:00Z',
     user: mockProfiles[2],
-    candidate: { name: 'Miguel Santos' } as any,
-    role: { id: 'role-1', title: 'Senior React Developer', client_name: 'TechCorp USA', status: 'open' } as any,
+    candidate: { name: 'Miguel Santos' },
+    role: { id: 'role-1', title: 'Senior React Developer', client_name: 'TechCorp USA', status: 'open' },
   },
   {
     id: 'log-4',
@@ -401,7 +401,7 @@ export const mockActivityLogs: ActivityLog[] = [
     action: 'Role created',
     created_at: '2026-03-05T09:00:00Z',
     user: mockProfiles[3],
-    role: { id: 'role-2', title: 'Product Manager – FinTech', client_name: 'Meridian Capital', status: 'open' } as any,
+    role: { id: 'role-2', title: 'Product Manager – FinTech', client_name: 'Meridian Capital', status: 'open' },
   },
   {
     id: 'log-5',
@@ -414,8 +414,8 @@ export const mockActivityLogs: ActivityLog[] = [
     new_value: 'offer',
     created_at: '2026-03-28T10:00:00Z',
     user: mockProfiles[3],
-    candidate: { name: 'Valentina Cruz' } as any,
-    role: { id: 'role-2', title: 'Product Manager – FinTech', client_name: 'Meridian Capital', status: 'open' } as any,
+    candidate: { name: 'Valentina Cruz' },
+    role: { id: 'role-2', title: 'Product Manager – FinTech', client_name: 'Meridian Capital', status: 'open' },
   },
   {
     id: 'log-6',
@@ -427,7 +427,7 @@ export const mockActivityLogs: ActivityLog[] = [
     new_value: 'open',
     created_at: '2026-03-28T14:20:00Z',
     user: mockProfiles[0],
-    role: { id: 'role-1', title: 'Senior React Developer', client_name: 'TechCorp USA', status: 'open' } as any,
+    role: { id: 'role-1', title: 'Senior React Developer', client_name: 'TechCorp USA', status: 'open' },
   },
   {
     id: 'log-7',
@@ -440,8 +440,8 @@ export const mockActivityLogs: ActivityLog[] = [
     new_value: 'hired',
     created_at: '2026-03-20T14:00:00Z',
     user: mockProfiles[1],
-    candidate: { name: 'Aisha Obi' } as any,
-    role: { id: 'role-6', title: 'UI/UX Designer', client_name: 'PixelForge Studio', status: 'closed' } as any,
+    candidate: { name: 'Aisha Obi' },
+    role: { id: 'role-6', title: 'UI/UX Designer', client_name: 'PixelForge Studio', status: 'closed' },
   },
   {
     id: 'log-8',
@@ -454,8 +454,8 @@ export const mockActivityLogs: ActivityLog[] = [
     new_value: 'interview_1',
     created_at: '2026-03-28T11:00:00Z',
     user: mockProfiles[2],
-    candidate: { name: 'Carlo Mendoza' } as any,
-    role: { id: 'role-3', title: 'DevOps Engineer', client_name: 'CloudScale Ltd', status: 'open' } as any,
+    candidate: { name: 'Carlo Mendoza' },
+    role: { id: 'role-3', title: 'DevOps Engineer', client_name: 'CloudScale Ltd', status: 'open' },
   },
 ];
 

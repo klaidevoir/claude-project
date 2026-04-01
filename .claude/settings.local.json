@@ -9,7 +9,12 @@
       "Read(//c//**)",
       "Read(//c/Users/klaid/AppData/Roaming/npm/**)",
       "Bash(find /c -name npm -type f)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(cmd.exe /c \"npm run build\")",
+      "Bash(cmd.exe:*)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\")",
+      "Bash(npm run:*)"
     ]
   }
 }
