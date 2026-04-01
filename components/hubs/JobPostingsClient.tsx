@@ -21,7 +21,6 @@ export function JobPostingsClient({ postings, roles }: Props) {
   const [platformFilter, setPlatformFilter] = useState('all');
   const [roleFilter, setRoleFilter] = useState('all');
   const router = useRouter();
-  const supabase = createClient();
 
   const filtered = useMemo(() => {
     return postings.filter((p) => {
@@ -229,7 +228,6 @@ function JobPostingModal({ open, onClose, posting, roles, platforms }: {
   platforms: string[];
 }) {
   const router = useRouter();
-  const supabase = createClient();
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState({
     platform_name: posting?.platform_name ?? '',
@@ -252,6 +250,7 @@ function JobPostingModal({ open, onClose, posting, roles, platforms }: {
   async function handleSave() {
     if (!form.platform_name) { toast.error('Platform name is required'); return; }
     setSaving(true);
+    const supabase = createClient();
     try {
       const payload = {
         ...form,

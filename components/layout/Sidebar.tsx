@@ -77,13 +77,13 @@ interface SidebarProps {
 export function Sidebar({ profile }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
-  const supabase = createClient();
 
   const visibleItems = navItems.filter((item) =>
     item.roles.includes(profile.role)
   );
 
   async function handleSignOut() {
+    const supabase = createClient();
     await supabase.auth.signOut();
     router.push('/login');
     router.refresh();

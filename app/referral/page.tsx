@@ -5,7 +5,6 @@ import { createClient } from '@/lib/supabase/client';
 import toast from 'react-hot-toast';
 
 export default function PublicReferralPage() {
-  const supabase = createClient();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -30,6 +29,7 @@ export default function PublicReferralPage() {
       return;
     }
     setSubmitting(true);
+    const supabase = createClient();
     try {
       const { error } = await supabase.from('referrals').insert({
         ...form,

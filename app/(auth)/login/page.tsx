@@ -1,20 +1,28 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+
+const MOCK_MODE = process.env.NEXT_PUBLIC_MOCK_MODE === 'true';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const supabase = createClient();
+
+  useEffect(() => {
+    if (MOCK_MODE) router.replace('/');
+  }, [router]);
+
+  if (MOCK_MODE) return null;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+    const supabase = createClient();
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
       toast.error(error.message);

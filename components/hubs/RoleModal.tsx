@@ -20,7 +20,6 @@ const STATUSES = ['open', 'paused', 'cancelled', 'closed', 'lost'];
 
 export function RoleModal({ open, onClose, role, profiles }: RoleModalProps) {
   const router = useRouter();
-  const supabase = createClient();
   const [saving, setSaving] = useState(false);
 
   const [form, setForm] = useState({
@@ -67,6 +66,7 @@ export function RoleModal({ open, onClose, role, profiles }: RoleModalProps) {
   async function handleSave() {
     if (!form.title) { toast.error('Role title is required'); return; }
     setSaving(true);
+    const supabase = createClient();
     try {
       const payload = {
         ...form,

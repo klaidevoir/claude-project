@@ -19,7 +19,6 @@ const STAGES: CandidateStage[] = ['applied', 'screening', 'interview_1', 'interv
 
 export function CandidateProfileModal({ open, onClose, candidate, profiles }: Props) {
   const router = useRouter();
-  const supabase = createClient();
   const [movingStage, setMovingStage] = useState(false);
   const [stageNote, setStageNote] = useState('');
   const [selectedStage, setSelectedStage] = useState<CandidateStage>(candidate.endorsement_stage);
@@ -27,6 +26,7 @@ export function CandidateProfileModal({ open, onClose, candidate, profiles }: Pr
   async function moveStage() {
     if (selectedStage === candidate.endorsement_stage) return;
     setMovingStage(true);
+    const supabase = createClient();
     try {
       const { data: { user } } = await supabase.auth.getUser();
       await supabase.from('candidates').update({ endorsement_stage: selectedStage }).eq('id', candidate.id);

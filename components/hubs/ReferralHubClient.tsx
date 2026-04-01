@@ -23,7 +23,6 @@ export function ReferralHubClient({ referrals }: Props) {
   const [statusFilter, setStatusFilter] = useState('all');
   const [search, setSearch] = useState('');
   const router = useRouter();
-  const supabase = createClient();
 
   const filtered = useMemo(() => {
     return referrals.filter((r) => {
@@ -34,18 +33,21 @@ export function ReferralHubClient({ referrals }: Props) {
   }, [referrals, statusFilter, search]);
 
   async function updateStatus(id: string, status: string) {
+    const supabase = createClient();
     const { error } = await supabase.from('referrals').update({ status }).eq('id', id);
     if (error) toast.error(error.message);
     else { toast.success('Status updated'); router.refresh(); }
   }
 
   async function toggleBonusPaid(id: string, current: boolean) {
+    const supabase = createClient();
     const { error } = await supabase.from('referrals').update({ bonus_paid: !current }).eq('id', id);
     if (error) toast.error(error.message);
     else { toast.success('Bonus status updated'); router.refresh(); }
   }
 
   async function toggleBonusEligible(id: string, current: boolean) {
+    const supabase = createClient();
     const { error } = await supabase.from('referrals').update({ bonus_eligible: !current }).eq('id', id);
     if (error) toast.error(error.message);
     else { toast.success('Bonus eligibility updated'); router.refresh(); }

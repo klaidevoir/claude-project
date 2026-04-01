@@ -20,7 +20,6 @@ const AVAILABILITIES = ['ASAP', '1 Week', '2 Weeks', '1 Month', 'Other'];
 
 export function CandidateModal({ open, onClose, candidate, roles, profiles }: Props) {
   const router = useRouter();
-  const supabase = createClient();
   const [saving, setSaving] = useState(false);
 
   const [form, setForm] = useState({
@@ -69,6 +68,7 @@ export function CandidateModal({ open, onClose, candidate, roles, profiles }: Pr
   async function handleSave() {
     if (!form.name) { toast.error('Candidate name is required'); return; }
     setSaving(true);
+    const supabase = createClient();
     try {
       const payload = {
         ...form,
